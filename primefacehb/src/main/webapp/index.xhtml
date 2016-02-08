@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<title>Index</title>
+</h:head>
+<h:form>
+
+
+	<p:growl id="messages"></p:growl>
+
+	<p:commandButton value="Register"
+		action="#{indexController.moveToAddPackage}" icon="ui-icon-star"
+		ajax="false" />
+
+	<p:commandButton value="Customer"
+		action="#{indexController.moveToCustomer}"
+		icon="ui-icon-star" ajax="false" />
+	<br />
+	<br />
+	<p:dataTable var="items" value="#{addPackage.packList}">
+		<p:column headerText="Package Id">
+			<h:outputText value="#{items.packageId}" />
+		</p:column>
+
+		<p:column headerText="Package Code">
+			<h:outputText value="#{items.code}" />
+		</p:column>
+
+		<p:column headerText="Package Name">
+			<h:outputText value="#{items.name}" />
+		</p:column>
+
+		<p:column headerText="Package Price">
+			<h:outputText value="#{items.price}" />
+		</p:column>
+
+		<p:column headerText="Package Description">
+			<h:outputText value="#{items.description}" />
+		</p:column>
+
+		<p:column headerText="Package Start Date">
+			<h:outputText value="#{items.startDate}" />
+		</p:column>
+
+		<p:column headerText="Package End Date">
+			<h:outputText value="#{items.endDate}" />
+		</p:column>
+
+		<p:column headerText="Action">
+			<p:commandButton value="Delete" action="#{addPackage.delete}"
+				update="@form" ajax="false">
+				<f:setPropertyActionListener value="#{items}"
+					target="#{addPackage.packageService}" />
+			</p:commandButton>
+		</p:column>
+
+	</p:dataTable>
+</h:form>
+</html>

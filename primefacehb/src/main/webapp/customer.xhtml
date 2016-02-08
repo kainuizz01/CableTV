@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<title>Customer</title>
+</h:head>
+<h:form>
+<p:commandButton value="Index" action="#{indexController.moveToIndex}"
+		icon="ui-icon-star" ajax="false" /><br/> <br />
+
+	<p:dataTable var="items" value="#{showCustomer.cusList}">
+		<p:column headerText="Customer IdCardNumber">
+			<h:outputText value="#{items.idCardNumber}" />
+		</p:column>
+
+<!-- 		<p:column headerText="First Name"> -->
+<!-- 			<h:outputText value="#{items.firstName}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="Last Name"> -->
+<!-- 			<h:outputText value="#{items.lastName}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="Last Name"> -->
+<!-- 			<h:outputText value="#{items.price}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="Birth Date"> -->
+<!-- 			<h:outputText value="#{items.description}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="Register Date"> -->
+<!-- 			<h:outputText value="#{items.startDate}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="E-Mail"> -->
+<!-- 			<h:outputText value="#{items.endDate}" /> -->
+<!-- 		</p:column> -->
+		
+<!-- 		<p:column headerText="Description"> -->
+<!-- 			<h:outputText value="#{items.endDate}" /> -->
+<!-- 		</p:column> -->
+
+<!-- 		<p:column headerText="Action"> -->
+<!-- 			<p:commandButton value="View" action="#{indexController.moveToCalculateCustomer}" -->
+<!-- 				 ajax="false"> -->
+<!-- 			</p:commandButton> -->
+<!-- 		</p:column> -->
+
+	</p:dataTable>
+
+</h:form>
+</html>
